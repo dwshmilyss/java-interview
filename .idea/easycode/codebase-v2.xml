@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/main/java/com/yiban/java/collections/ArrayListDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/collections/CollectionsNotSafeDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/gcroots/ReferenceQueueDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/gcroots/SoftReferenceDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/gcroots/WeakHashMapDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/gcroots/WeakReferenceDemo.java;/Users/edz/sourceCode/java-interview/src/main/java/com/yiban/java/thread/SyncAndReentrantLockDemo.java" />
+  </component>
+</project>

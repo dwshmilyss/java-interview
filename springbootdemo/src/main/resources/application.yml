@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: springbootdemo
+  datasource:
+    url: jdbc:mysql://hadoop02:3306/java_interview?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 120653
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8081
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yiban.springbootdemo.entity
+  configuration:
+    map-underscore-to-camel-case: true
