@@ -11,6 +11,7 @@ import java.util.Scanner;
  */
 public class PointExchange {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         int points = 20; // 初始积分
         int needPoints;  // 每次兑换所需积分
