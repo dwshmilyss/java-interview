@@ -1,6 +1,7 @@
 package com.yiban.aop.redis.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yiban.aop.redis.annotation.MyRedisCache;
 import com.yiban.aop.redis.entity.TUser;
 import com.yiban.aop.redis.service.TUserService;
 import com.yiban.aop.redis.mapper.TUserMapper;
@@ -41,23 +42,41 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser>
         return returnVal;
     }
 
+    /**
+     * 用aop环绕通知来简化代码
+     * @param id
+     * @return
+     */
     @Override
+    @MyRedisCache(keyPrefix = "user",matchValue = "#id")
     public TUser getUserByID(int id) {
-        TUser tUser = null;
-        //1.先从redis查
-        String key = CACHE_KEY_USER + id;
-        tUser = (TUser) redisTemplate.opsForValue().get(key);
-        //2.如果redis没有，再从mysql查
-        if (tUser == null) {
-            tUser = tUserMapper.selectById(id);
-            //3.查到后放入redis
-            if (tUser != null) {
-                redisTemplate.opsForValue().set(key,tUser);
-            }
-        }
-        //3.redis有，直接返回
-        return tUser;
+        return tUserMapper.selectById(id);
     }
+
+    /**
+     * 普通写法，对比上面的用环绕通知实现的代码，显得又臭又长
+     * @param id
+     * @return
+     */
+//    @Override
+//    public TUser getUserByID(int id) {
+//        TUser tUser = null;
+//        //1.先从redis查
+//        String key = CACHE_KEY_USER + id;
+//        tUser = (TUser) redisTemplate.opsForValue().get(key);
+//        //2.如果redis没有，再从mysql查
+//        if (tUser == null) {
+//            tUser = tUserMapper.selectById(id);
+//            //3.查到后放入redis
+//            if (tUser != null) {
+//                redisTemplate.opsForValue().set(key,tUser);
+//            }
+//        }
+//        //3.redis有，直接返回
+//        return tUser;
+//    }
+
+
 }
 
 

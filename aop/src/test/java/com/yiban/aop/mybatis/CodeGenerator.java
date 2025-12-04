@@ -12,7 +12,9 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
  */
 public class CodeGenerator {
     public static void main(String[] args) {
-
+        /*
+        通过mybatis-plus-generator快速生成对应的代码(根据MySQL中的表自动生成 entity、mapper、service、controller等),
+         */
         FastAutoGenerator.create("jdbc:mysql://127.0.0.1:3306/test?serverTimezone=Asia/Shanghai",
                         "root", "120653")
                 .globalConfig(builder -> {
