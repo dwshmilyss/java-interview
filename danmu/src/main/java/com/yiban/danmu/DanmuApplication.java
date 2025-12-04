@@ -1,0 +1,13 @@
+package com.yiban.danmu;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DanmuApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DanmuApplication.class, args);
+    }
+
+}

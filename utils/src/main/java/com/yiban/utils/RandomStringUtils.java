@@ -1,4 +1,4 @@
-package com.yiban.java.utils;
+package com.yiban.utils;
 
 import java.security.SecureRandom;
 import java.util.Random;
