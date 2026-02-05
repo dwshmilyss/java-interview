@@ -92,6 +92,7 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>

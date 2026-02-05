@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.0.2</spring-boot.version>
+        <mybatis-plus.version>3.5.5</mybatis-plus.version>
     </properties>
     <dependencies>
         <dependency>
@@ -39,6 +40,28 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>3.0.0</version>
+        </dependency>
+        <!-- tk mybatis -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+        <!-- mybatis plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+            <version>${mybatis-plus.version}</version>
         </dependency>
 
         <dependency>
@@ -79,6 +102,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>5.0.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -110,7 +139,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.yiban.java.base.redisseckill.RedisSeckillApplication</mainClass>
+                    <mainClass>com.yiban.redisseckill.RedisSeckillApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
