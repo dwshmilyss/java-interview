@@ -6,6 +6,14 @@ spring:
     username: root
     password: 120653
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cache:
+    type: caffeine
+    cache-names:
+      - user_cache
+      - product_cache
+    caffeine:
+      # spec 字符串定义：最大容量，写入后过期时间
+      spec: maximumSize=500,expireAfterWrite=600s
 
 server:
   port: 8081
